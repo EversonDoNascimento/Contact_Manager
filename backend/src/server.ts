@@ -1,6 +1,7 @@
 import Fastify, { FastifyReply, FastifyRequest } from "fastify";
 import AuthRoutes from "./routes/Auth";
 import jwt from "@fastify/jwt";
+import ContactsRoutes from "./routes/Contacts";
 const server = Fastify();
 
 // configurando o servidor
@@ -23,6 +24,7 @@ server.decorate(
 );
 
 server.register(AuthRoutes);
+server.register(ContactsRoutes);
 
 // iniciando o servidor
 server.listen(
