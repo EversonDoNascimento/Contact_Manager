@@ -2,7 +2,12 @@ import Fastify, { FastifyReply, FastifyRequest } from "fastify";
 import AuthRoutes from "./routes/Auth";
 import jwt from "@fastify/jwt";
 import ContactsRoutes from "./routes/Contacts";
+import multipart from "@fastify/multipart";
+
 const server = Fastify();
+
+// adicionando o plugin multipart
+server.register(multipart);
 
 // configurando o servidor
 
